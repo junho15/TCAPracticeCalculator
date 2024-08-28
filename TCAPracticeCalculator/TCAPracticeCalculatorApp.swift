@@ -1,10 +1,16 @@
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TCAPracticeCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Store(
+                initialState: CalculatorFeature.State(),
+                reducer: {
+                    CalculatorFeature()
+                }
+            ))
         }
     }
 }
